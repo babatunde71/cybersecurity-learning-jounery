@@ -8,6 +8,16 @@ lab:
 
 **CCSP Domain:** ☁️ D1. Cloud Concepts, Architecture & Design
 
+- [Lab Scenario](#lab-scenario)
+- [Lab Objectives](#lab-objectives)
+- [RBAC Architecture Diagram](#rbac-architecture-diagram)
+- [Exercise 1: Create Senior Admins Group (Azure Portal)](#exercise-1-create-senior-admins-group-azure-portal)
+- [Exercise 2: Create Junior Admins Group (PowerShell)](#exercise-2-create-junior-admins-group-powershell)
+- [Exercise 3: Create Service Desk Group (Azure CLI)](#exercise-3-create-service-desk-group-azure-cli)
+- [Exercise 4: Assign Virtual Machine Contributor Role](#exercise-4-assign-virtual-machine-contributor-role)
+- [Clean Up Resources](#clean-up-resources)
+
+
 ## Lab Scenario
 
 This lab demonstrates how Azure users and groups are created and how role-based access control (RBAC) is used to assign roles to groups. The tasks include:

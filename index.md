@@ -1,4 +1,12 @@
+
 # Welcome to My Security Learning Journey
+
+## Menu
+
+- [📚 CCSP Notes](ccsp/) – Notes and summaries for CCSP study.
+- [💻 Azure Labs](labs/) – Hands-on labs mapped to CCSP domains.
+- [🗺️ Roadmap](roadmap/) – My learning plan.
+
 
 Hi, I’m **Tunde** 👋
 
