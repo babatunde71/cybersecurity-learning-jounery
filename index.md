@@ -1,5 +1,5 @@
 
-# Welcome to My Security Learning Journey
+# Welcome to My Cyber Security Learning Journey
 
 ## Menu
 
