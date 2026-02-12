@@ -18,7 +18,6 @@ These certifications introduced me to cloud platforms early and sparked my inter
 
 ## 🏆 My Badge Wall
 
-## 🏆 My Badge Wall
 
 | ![SSCP](../cert/sscp.png) | ![Network+](../cert/network_plus.png) | ![CC](../cert/cc.png) |
 |----------------------------|---------------------------------------|----------------------|
@@ -30,9 +29,8 @@ These certifications introduced me to cloud platforms early and sparked my inter
 
 
 
-
 ---
-# Roadmap
+# Current Roadmap So Far:
 
 🛡️ **Certified in Cybersecurity (CC) – (ISC)²**
 
