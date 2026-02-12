@@ -362,7 +362,7 @@ Confirm the deletion in the Azure portal.
 
 ---
 
-# Lesson Learnt and Improvement
+## Lesson Learnt and Improvement
 
 🔐 SSH keys over passwords: Realized SSH key authentication is far more secure and should be my default for Linux VMs going forward.
 
