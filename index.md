@@ -3,9 +3,9 @@
 
 ## Menu
 - [💼 LinkedIn](https://www.linkedin.com/in/babatunde-adesoye-0b1b6b1b1/) 
-- [📚 CCSP Notes](ccsp/) – Notes and summaries for CCSP study.
-- [💻 Azure Labs](labs/) – Hands-on labs mapped to CCSP domains.
+- [💻 Azure Security Labs](labs/) – Hands-on Azure Security labs mapped to CCSP domains.
 - [🗺️ Roadmap](roadmap/) – My learning plan.
+
 
 
 Hi, I’m **Tunde** 👋
