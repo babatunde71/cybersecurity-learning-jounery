@@ -2,7 +2,7 @@
 # Welcome to My Cyber Security Learning Journey
 
 ## Menu
-
+- [💼 LinkedIn](https://www.linkedin.com/in/babatunde-adesoye-0b1b6b1b1/) 
 - [📚 CCSP Notes](ccsp/) – Notes and summaries for CCSP study.
 - [💻 Azure Labs](labs/) – Hands-on labs mapped to CCSP domains.
 - [🗺️ Roadmap](roadmap/) – My learning plan.
@@ -15,8 +15,6 @@ I’m currently studying for the **Certified Cloud Security Professional (CCSP)*
 This site is where I document my learning journey — from hands-on labs and technical notes to weekly reflections on what I’m learning and building along the way.
 
 My goal is to move beyond theory and turn concepts into real, practical experience. To do that, I’ve created a learning roadmap that maps **CCSP domains** to **Azure Security Engineering labs**, allowing me to apply each idea in a real cloud environment as I progress.
-
-
 
 
 
