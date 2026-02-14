@@ -788,13 +788,13 @@ Without UDRs, traffic bypasses the firewall.
 🧠 **Default deny is powerful**
 Once traffic flows through Azure Firewall, anything not allowed is blocked automatically.
 
-### Template Test Toolkit: 
+# Template Test Toolkit: 
 
 The Azure Resource Manager (ARM) test toolkit checks your template for best practices and provides warnings with suggested fixes, helping you avoid common development issues.
 
 [Template Test Toolkit](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/test-toolkit)
 
-#### Toolkit Test on my Template Result:
+## Toolkit Test on my Template Result:
 
 ![Template Test Toolkit](../labs/lab-03-media/toolkit-tester.png)
 
