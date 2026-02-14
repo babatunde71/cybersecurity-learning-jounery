@@ -13,7 +13,7 @@
 * [Exercise 2: Test Azure Firewall](#exercise-2-test-azure-firewall)
 * [Clean Up Resources](#clean-up-resources)
 * [Lesson Learnt and Improvement](#lesson-learnt-and-improvement)
-    * [ARM template test toolkit - Azure Resource Manager](#toolkit-test-on-my-template-result)
+    * [ARM Template Test Toolkit - Azure Resource Manager](#toolkit-test-on-my-template-result)
 
 ---
 
