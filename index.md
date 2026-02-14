@@ -6,7 +6,10 @@
 - [💻 Azure Security Labs](labs/) – Hands-on Azure Security labs mapped to CCSP domains.
 - [🗺️ Roadmap](roadmap/) – My learning plan.
 
-HELLO:
+
+![Profile Picture](./general-media/profile-pic.png)
+
+
 
 Hi, I’m **Tunde** 👋
 
