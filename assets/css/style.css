@@ -1,0 +1,50 @@
+/* Hacker/terminal aesthetic */
+body {
+    background-color: #000000;
+    color: #00FF00;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+}
+
+a {
+    color: #0ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header,
+footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Courier New", Courier, monospace;
+    color: #00FF00;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+code,
+pre {
+    background-color: #111;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: block;
+    overflow-x: auto;
+}
+
+pre {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}

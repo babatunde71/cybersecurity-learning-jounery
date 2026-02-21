@@ -1,1 +1,7 @@
-theme: jekyll-theme-minimal
+title: Hacker Aesthetic
+description: "A minimal hacker-themed Jekyll site"
+baseurl: "" # leave empty for GitHub Pages root
+url: "https://yourusername.github.io" # replace with your GitHub Pages URL
+theme: minima # we override with custom CSS
+plugins:
+  - jekyll-feed
