@@ -4,32 +4,6 @@
 
 #### 🔑 D2. Cloud Data Security
 
-
-
----
-
-* [Lab Scenario](#lab-scenario)
-* [Lab Objectives](#lab-objectives)
-* [Azure SQL Security Architecture Diagram](#azure-sql-security-architecture-diagram)
-* [Exercise 1: Implement SQL Database Security Features](#exercise-1-implement-sql-database-security-features)
-* [Clean Up Resources](#clean-up-resources)
-* [Lesson Learnt and Improvement](#lesson-learnt-and-improvement)
-
-
-Love this lab structure — it’s already strong. Let’s add a **detailed navigation section at the top** so you (or students) can jump directly to each task and sub-task.
-
-Here’s an improved top navigation block you can replace your current one with:
-
----
-
-# 🔐 Lab: Securing Azure SQL Database
-
-### CCSP Domain:
-
-#### ☁️ D3. Cloud Platform & Infrastructure Security
-
-#### 🔎 D5. Cloud Security Operations
-
 ---
 
 ## 📚 Lab Navigation
