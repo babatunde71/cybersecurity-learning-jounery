@@ -5,6 +5,7 @@
 - [💼 LinkedIn](https://www.linkedin.com/in/babatunde-armin-adesoye/) 
 - [💻 Azure Security Labs](labs/) – Hands-on Azure Security labs mapped to CCSP domains.
 - [🗺️ Roadmap](roadmap/) – My learning plan.
+- [🤖 AI Security](ai_security/) – AI Security Thoughts and Notes.
 
 ## Me:
 
