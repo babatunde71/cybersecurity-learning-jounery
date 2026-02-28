@@ -1,0 +1,281 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "apiVersion": {
+            "value": "2025-05-01"
+        },
+        "resourceName": {
+            "value": "MyKubernetesCluster"
+        },
+        "location": {
+            "value": "eastus2"
+        },
+        "isLocationEdgeZone": {
+            "value": false
+        },
+        "edgeZone": {
+            "value": {}
+        },
+        "useServicePrincipal": {
+            "value": false
+        },
+        "clusterSku": {
+            "value": {
+                "name": "Base",
+                "tier": "Free"
+            }
+        },
+        "clusterTags": {
+            "value": {}
+        },
+        "tagsForAllResources": {
+            "value": {}
+        },
+        "clusterIdentity": {
+            "value": {
+                "type": "SystemAssigned"
+            }
+        },
+        "enableAadProfile": {
+            "value": false
+        },
+        "aadProfile": {
+            "value": {}
+        },
+        "dnsPrefix": {
+            "value": "MyKubernetesCluster-dns"
+        },
+        "kubernetesVersion": {
+            "value": "1.33.6"
+        },
+        "enableRBAC": {
+            "value": true
+        },
+        "windowsProfile": {
+            "value": false
+        },
+        "nodeResourceGroup": {
+            "value": "MC_AZ500LAB05_MyKubernetesCluster_eastus2"
+        },
+        "upgradeChannel": {
+            "value": "patch"
+        },
+        "servicePrincipalClientId": {
+            "value": null
+        },
+        "servicePrincipalClientSecret": {
+            "value": null
+        },
+        "adminGroupObjectIDs": {
+            "value": []
+        },
+        "principalId": {
+            "value": ""
+        },
+        "supportPlan": {
+            "value": "KubernetesOfficial"
+        },
+        "azureRbac": {
+            "value": false
+        },
+        "disableLocalAccounts": {
+            "value": false
+        },
+        "enablePrivateCluster": {
+            "value": false
+        },
+        "isPrivateClusterSupported": {
+            "value": true
+        },
+        "enableAuthorizedIpRange": {
+            "value": false
+        },
+        "authorizedIPRanges": {
+            "value": []
+        },
+        "isPublicNetworkAccessEnabled": {
+            "value": false
+        },
+        "publicNetworkAccess": {
+            "value": "Enabled"
+        },
+        "enableDiskEncryptionSetID": {
+            "value": false
+        },
+        "diskEncryptionSetID": {
+            "value": ""
+        },
+        "aadSessionKey": {
+            "value": null
+        },
+        "nodeAutoProvisioningMode": {
+            "value": "Manual"
+        },
+        "isAzurePolicySupported": {
+            "value": true
+        },
+        "enableAzurePolicy": {
+            "value": false
+        },
+        "isSecretStoreCSIDDriverSupported": {
+            "value": true
+        },
+        "enableSecretStoreCSIDriver": {
+            "value": false
+        },
+        "enableOmsAgent": {
+            "value": false
+        },
+        "workspaceRegion": {
+            "value": "East US"
+        },
+        "workspaceName": {
+            "value": ""
+        },
+        "omsWorkspaceId": {
+            "value": ""
+        },
+        "omsSku": {
+            "value": "standalone"
+        },
+        "aciVnetSubnetName": {
+            "value": ""
+        },
+        "aciConnectorLinuxEnabled": {
+            "value": false
+        },
+        "acrName": {
+            "value": ""
+        },
+        "acrResourceGroup": {
+            "value": ""
+        },
+        "guidValue": {
+            "value": "6985baac-0495-41fb-8e63-ca9550b12609"
+        },
+        "enableVnetSubnetID": {
+            "value": false
+        },
+        "vnetSubnetID": {
+            "value": ""
+        },
+        "loadBalancerSku": {
+            "value": "Standard"
+        },
+        "networkPolicy": {
+            "value": ""
+        },
+        "networkPlugin": {
+            "value": "azure"
+        },
+        "networkPluginMode": {
+            "value": "overlay"
+        },
+        "networkDataplane": {
+            "value": "azure"
+        },
+        "serviceCidr": {
+            "value": ""
+        },
+        "dnsServiceIP": {
+            "value": ""
+        },
+        "spotMaxPrice": {
+            "value": ""
+        },
+        "vmssNodePool": {
+            "value": true
+        },
+        "isAvailabilityZoneEnabled": {
+            "value": true
+        },
+        "osDiskSizeGB": {
+            "value": 0
+        },
+        "agentCount": {
+            "value": 3
+        },
+        "scaleSetEvictionPolicy": {
+            "value": "Delete"
+        },
+        "scaleSetPriority": {
+            "value": "Regular"
+        },
+        "agentTags": {
+            "value": {}
+        },
+        "enableNodePublicIP": {
+            "value": false
+        },
+        "agentNodeTaints": {
+            "value": []
+        },
+        "agentNodeLables": {
+            "value": {}
+        },
+        "agentAvailabilityZones": {
+            "value": []
+        },
+        "agentMode": {
+            "value": "System"
+        },
+        "agentMaxPods": {
+            "value": 30
+        },
+        "agentPoolType": {
+            "value": "VirtualMachineScaleSets"
+        },
+        "agentOSType": {
+            "value": "Linux"
+        },
+        "agentVMSize": {
+            "value": "Standard_D2_v3"
+        },
+        "agentMaxCount": {
+            "value": 5
+        },
+        "agentMinCount": {
+            "value": 3
+        },
+        "enableAutoScaling": {
+            "value": true
+        },
+        "serviceMeshMode": {
+            "value": "Disabled"
+        },
+        "istioInternalIngressGateway": {
+            "value": false
+        },
+        "istioExternalIngressGateway": {
+            "value": false
+        },
+        "nodeOSUpgradeChannel": {
+            "value": "NodeImage"
+        },
+        "isImageCleanerEnabled": {
+            "value": true
+        },
+        "imageCleanerIntervalHours": {
+            "value": 168
+        },
+        "enableOIDC": {
+            "value": true
+        },
+        "issuerURL": {
+            "value": ""
+        },
+        "enableWorkloadIdentity": {
+            "value": true
+        },
+        "fleetName": {
+            "value": ""
+        },
+        "fleetLocation": {
+            "value": ""
+        },
+        "fleetDnsNamePrefix": {
+            "value": ""
+        }
+    }
+}
