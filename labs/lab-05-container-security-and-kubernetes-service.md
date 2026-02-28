@@ -6,7 +6,7 @@
 
 ---
 
-## 📚 Lab Navigation
+## 📚 Lab Navigatissson
 
 ### 🔎 Overview
 
@@ -63,14 +63,9 @@ You will:
 
 # ACR & AKS Architecture Diagram
 
-```
-Dockerfile → ACR → AKS Cluster
-                      |
-          ---------------------------
-          |                         |
-   External Service           Internal Service
- (Public Load Balancer)     (Private Cluster IP)
-```
+
+
+![Azure Container Register and Kubernetes Cluster](../labs/lab-05-media/configuring-and-securing-acr-and-aks-diagram.png)
 
 ---
 
@@ -110,14 +105,18 @@ Click the Cloud Shell icon → Select:
 ### Step 3: Create Resource Group
 
 ```bash
-az group create --name AZ500LAB09 --location eastus
+az group create --name AZ500LAB05 --location eastus
 ```
 
 Verify:
 
 ```bash
-az group list --query "[?name=='AZ500LAB09']" -o table
+az group list --query "[?name=='AZ500LAB05']" -o table
 ```
+
+![Create Resource Group](../labs/lab-05-media/create-resource-group-1.png)
+
+![Create Resource Group](../labs/lab-05-media/create-resource-group-1.png)
 
 ---
 
@@ -132,6 +131,9 @@ az provider register --namespace Microsoft.ContainerService
 az provider register --namespace Microsoft.ContainerRegistry
 ```
 
+
+
+
 ---
 
 ### Step 5: Create Azure Container Registry
@@ -139,39 +141,41 @@ az provider register --namespace Microsoft.ContainerRegistry
 > ⚠️ ACR name must be globally unique.
 
 ```bash
-az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
-```
+az acr create --resource-group AZ500LAB05 --name az500$(Get-Random) --sku Standard
 
+```
 Verify:
 
 ```bash
-az acr list --resource-group AZ500LAB09 -o table
+az acr list --resource-group AZ500LAB05 -o table
 ```
+
+
+![Create Container Registry](../labs/lab-05-media/acr-create.png)
+
+![Container Registry Name](../labs/lab-05-media/acr-name.png)
+
 
 📝 Record the ACR name for later use.
 
 ---
 
-## Task 2: Create a Dockerfile, Build and Push Container Image
-
-### Step 1: Create Dockerfile
-
-```bash
-echo FROM nginx > Dockerfile
-```
+## Task 2: Build and Push Container Image
 
 ---
 
-### Step 2: Build and Push Image to ACR
+### Step 1: Build and Push Image to ACR
 
 ```bash
-ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
+ACRNAME=$(az acr list --resource-group AZ500LAB05 --query '[].{Name:name}' --output tsv)
 
-az acr build --resource-group AZ500LAB09 \
---image sample/nginx:v1 \
---registry $ACRNAME \
---file Dockerfile .
+az acr import --name $ACRNAME --source docker.io/library/nginx:latest --image sample/nginx:v1
+
+
 ```
+
+![Build and Pull Nginx Image](../labs/lab-05-media/build-and-pull-nginx-image-1.png)
+
 
 ⏳ Wait for completion (~2 minutes).
 
@@ -181,7 +185,7 @@ az acr build --resource-group AZ500LAB09 \
 
 Navigate to:
 
-* Resource Group → AZ500LAB09
+* Resource Group → AZ500LAB05
 * Open Container Registry
 * Select **Repositories**
 
@@ -189,6 +193,10 @@ Confirm:
 
 * Repository: `sample/nginx`
 * Tag: `v1`
+
+
+
+![Build and Pull Nginx Image](../labs/lab-05-media/build-and-pull-nginx-image-2.png)
 
 ---
 
@@ -212,7 +220,7 @@ Create → Create Kubernetes cluster
 
 | Setting        | Value                               |
 | -------------- | ----------------------------------- |
-| Resource Group | AZ500LAB09                          |
+| Resource Group | AZ500LAB05                          |
 | Cluster Name   | MyKubernetesCluster                 |
 | Region         | East US                             |
 | Pricing Tier   | Free                                |
@@ -242,6 +250,16 @@ Click **Review + Create** → **Create**
 
 ⏳ Deployment may take 10 minutes.
 
+
+![Kubernetes Cluster Setting](../labs/lab-05-media/kubernetes-cluster-1.png)
+
+![Kubernetes Cluster Setting](../labs/lab-05-media/kubernetes-cluster-2.png)
+
+![Kubernetes Cluster Result](../labs/lab-05-media/kubernetes-cluster-3.png)
+
+![Kubernetes Cluster Result](../labs/lab-05-media/kubernetes-cluster-4.png)
+
+
 ---
 
 ### Connect to AKS
@@ -249,14 +267,19 @@ Click **Review + Create** → **Create**
 In Cloud Shell:
 
 ```bash
-az aks get-credentials --resource-group AZ500LAB09 --name MyKubernetesCluster
+az aks get-credentials --resource-group AZ500LAB05 --name MyKubernetesCluster
 ```
+
+![Kubernetes Cluster Credentials](../labs/lab-05-media/kubernetes-cluster-credentials.png)
 
 Verify:
 
 ```bash
 kubectl get nodes
 ```
+
+![Kubernetes Cluster Credentials](../labs/lab-05-media/kubernetes-cluster-get-node.png)
+
 
 Ensure node status is **Ready**.
 
@@ -267,18 +290,21 @@ Ensure node status is **Ready**.
 Attach ACR:
 
 ```bash
-ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
+ACRNAME=$(az acr list --resource-group AZ500LAB05 --query '[].{Name:name}' --output tsv)
 
-az aks update -n MyKubernetesCluster -g AZ500LAB09 --attach-acr $ACRNAME
+az aks update -n MyKubernetesCluster -g AZ500LAB05 --attach-acr $ACRNAME
 ```
+![ACR TO Kubernetes Cluster](../labs/lab-05-media/acr-link-to-kuberneters-cluster.png)
+
+![ACR TO Kubernetes Cluster](../labs/lab-05-media/acr-link-to-kuberneters-cluster-2.png)
 
 ---
 
 ### Grant Contributor Role to AKS on VNet
 
 ```bash
-RG_AKS=AZ500LAB09
-RG_VNET=MC_AZ500LAB09_MyKubernetesCluster_eastus
+RG_AKS=AZ500LAB05
+RG_VNET=MC_AZ500LAB05_MyKubernetesCluster_eastus
 AKS_CLUSTER_NAME=MyKubernetesCluster
 
 AKS_VNET_NAME=$(az network vnet list --resource-group $RG_VNET --query "[0].name" -o tsv)
@@ -292,12 +318,19 @@ az role assignment create --assignee $AKS_MANAGED_ID --role Contributor --scope 
 
 ---
 
+![Grant Contributor Role to AKS on VNet](../labs/lab-05-media/grant-contributor-role-to-aks-on-vnet.png)
+
+
 ## Task 5: Deploy an External Service to AKS
 
 Upload:
 
 * `nginxexternal.yaml`
 * `nginxinternal.yaml`
+
+
+
+![Grant Contributor Role to AKS on VNet](../labs/lab-05-media/nginx-upload.png)
 
 Edit `nginxexternal.yaml`:
 
@@ -308,6 +341,7 @@ Replace:
 ```
 
 With your ACR name.
+
 
 Apply:
 
@@ -320,6 +354,14 @@ Verify:
 ```bash
 kubectl get service nginxexternal
 ```
+
+![Nginx External](../labs/lab-05-media/nginxexternal-replace.png)
+
+![Nginx External Deployment](../labs/lab-05-media/nginxexternal-deployed-1.png)
+
+
+
+
 
 ---
 
@@ -343,6 +385,10 @@ You should see:
 Welcome to nginx!
 ```
 
+![Nginx External Deployment 2](../labs/lab-05-media/nginxexternal-deployed-2.png)
+
+![Nginx External Deployment 3](../labs/lab-05-media/nginxexternal-deployed-3.png)
+
 ---
 
 ## Task 7: Deploy an Internal Service to AKS
@@ -355,6 +401,11 @@ nginxinternal.yaml
 
 Replace `<ACRUniquename>` with your ACR name.
 
+
+
+![Nginx Internal](../labs/lab-05-media/nginxinternal-replace.png)
+
+
 Apply:
 
 ```bash
@@ -366,6 +417,11 @@ Verify:
 ```bash
 kubectl get service nginxinternal
 ```
+
+![Nginx Internal Deployment](../labs/lab-05-media/nginxinternal-deployed-1.png)
+
+![Nginx Internal Deployment](../labs/lab-05-media/nginxinternal-deployed-2.png)
+
 
 Note:
 
@@ -381,11 +437,15 @@ List pods:
 kubectl get pods
 ```
 
+![Nginx Internal Deployment](../labs/lab-05-media/nginxinternal-deployed-3.png)
+
 Connect to first pod:
 
 ```bash
 kubectl exec -it <pod_name> -- /bin/bash
 ```
+
+![Nginx Internal Deployment](../labs/lab-05-media/nginxinternal-deployed-4.png)
 
 Test internal endpoint:
 
@@ -396,6 +456,12 @@ curl http://<internal_IP>
 You should see the nginx HTML output.
 
 Exit and close Cloud Shell.
+
+
+![Nginx Internal Deployment](../labs/lab-05-media/nginxinternal-deployed-5.png)
+
+
+![Nginx Internal Deployment](../labs/lab-05-media/nginxinternal-deployed-6.png)
 
 ---
 
@@ -418,8 +484,11 @@ To avoid unexpected costs:
 Open Cloud Shell → Switch to PowerShell
 
 ```powershell
-Remove-AzResourceGroup -Name "AZ500LAB09" -Force -AsJob
+Remove-AzResourceGroup -Name "AZ500LAB05" -Force -AsJob
 ```
+
+
+![Clean Up Resources](..\labs\lab-05-media\cleanup-resource.png)
 
 Confirm deletion in the Azure portal.
 
