@@ -40,7 +40,6 @@ This proof-of-concept includes:
 * Encrypting database columns using **Always Encrypted**
 * Accessing encrypted data securely via a **client application**
 
-> ⚠️ All resources in this lab use the **East US** region. Confirm with your instructor before proceeding.
 
 ---
 
