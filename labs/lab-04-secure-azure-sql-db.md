@@ -3,6 +3,7 @@
 ### CCSP Domain:
 
 #### 🔑 D2. Cloud Data Security
+#### 🔐 D4. Cloud Application Security 
 
 ---
 

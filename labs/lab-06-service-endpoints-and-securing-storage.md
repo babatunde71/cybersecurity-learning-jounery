@@ -4,6 +4,8 @@
 
 #### ☁️ D1. Cloud Concepts, Architecture and Design
 
+#### 🔑 D2. Cloud Data Security 
+
 ---
 
 ## 📚 Lab Navigation

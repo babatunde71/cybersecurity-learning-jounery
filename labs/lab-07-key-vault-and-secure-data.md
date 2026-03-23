@@ -20,6 +20,7 @@
 * [Exercise 3: Configure Azure SQL Database and Application](#exercise-3-configure-an-azure-sql-database-and-a-data-driven-application)
 * [Exercise 4: Demonstrate Always Encrypted with Key Vault](#exercise-4-demonstrate-the-use-of-azure-key-vault-in-encrypting-the-azure-sql-database)
 * [Clean Up Resources](#clean-up-resources)
+* [Lessons Learned](#lessons-learned)
 
 ---
 
@@ -1025,8 +1026,6 @@ You successfully implemented:
 * SQL Always Encrypted
 * Secure application access using Microsoft Entra ID
 
-
-Here is a **short “Lessons Learned” section with emojis** that matches the style of your other lab:
 
 ---
 
